@@ -5,9 +5,8 @@ def crear_equipo(codigo):
     return Equipo(codigo, "Test", "Lab", "Operativo", "Admin")
 
 def ejecutar_experimento():
-    print("=== EXPERIMENTO DE EFICIENCIA: COMPORTAMIENTO ESTRUCTURAL ===\n")
-
-
+    print("=== EXPERIMENTO DE EFICIENCIA: COMPORTAMIENTO ESTRUCTURAL ===")
+    
     arbol_a = ArbolBST()
     claves_a = [420, 220, 620, 120, 320, 520, 720]
     for clave in claves_a:
@@ -25,7 +24,7 @@ def ejecutar_experimento():
     print(arbol_b.visualizar())
     print(f"Altura: {arbol_b.altura()}")
 
-    print("\n--- NODOS EXAMINADOS EN LAS BUSQUEDAS ---")
+    print("\n--- NODOS EXAMINADOS EN LAS BUSQUEDAS ---\n")
     print(f"{'Busqueda':<16} {'Codigo':<10} {'Arbol A':<10} {'Arbol B':<10}")
     print("-" * 49)
 

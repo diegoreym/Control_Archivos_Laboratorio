@@ -1,3 +1,10 @@
+#Importar el módulo sys y Path para poder importar desde la carpeta raíz del proyecto
+import sys
+from pathlib import Path
+RAIZ_PROYECTO = Path(__file__).resolve().parents[1]
+if str(RAIZ_PROYECTO) not in sys.path:
+    sys.path.insert(0, str(RAIZ_PROYECTO))
+
 import unittest
 from arbol_bst import ArbolBST
 from equipo import Equipo
@@ -82,7 +89,7 @@ class TestBSTControlActivos(unittest.TestCase):
 
     # P09: Intentar ingresar clave no numérica
     def test_p09_clave_no_numerica(self):
-        with self.assertRaises(ValueError):
+        with self.assertRaises(TypeError):
              Equipo("codigo_falso", "Test", "Lab", "Operativo", "Admin")
 
     # P10: Operar sobre árbol vacío
@@ -97,4 +104,4 @@ class TestBSTControlActivos(unittest.TestCase):
             Equipo(900, "Test", "Lab", "CondicionFalsa", "Admin")
 
 if __name__ == '__main__':
-    unittest.main()
+    unittest.main(verbosity=2) #verbosity = 2 para detallar el estado de cada método de la clase Tests

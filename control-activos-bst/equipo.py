@@ -82,4 +82,5 @@ class Equipo:
             f"codigo_patrimonial={self.codigo_patrimonial!r}, "
             f"descripcion={self.descripcion!r}, laboratorio={self.laboratorio!r}, "
             f"condicion={self.condicion!r}, responsable={self.responsable!r})" #!r permite que los valores impresos se muestren en comillas
+            
         )
