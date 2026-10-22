@@ -75,7 +75,9 @@ class EstadisticasMixin:
 
         # Caso recursivo: es un preorder que lleva el nivel (profundidad).
         equipo = nodo.equipo
-        lineas.append("    " * nivel
-                      + f"[{lado}] {equipo.codigo_patrimonial} - {equipo.descripcion}")
+        sangria = "" if nivel == 0 else "    " + "|   " * (nivel - 1)
+        rama = "" if nivel == 0 else "|-- "
+
+        lineas.append(f"{sangria}{rama}[{lado}] {equipo.codigo_patrimonial}")
         self._visualizar_recursivamente(nodo.izquierdo, nivel + 1, "izq", lineas)
         self._visualizar_recursivamente(nodo.derecho, nivel + 1, "der", lineas)

@@ -14,7 +14,7 @@ class ArbolBST(
     def __init__(self) -> None:
         super().__init__()
 
-    def obtener_raiz(self):  # sourcery skip: assign-if-exp, reintroduce-else
+    def obtener_raiz(self): 
         if self.raiz is None:
             return None
 

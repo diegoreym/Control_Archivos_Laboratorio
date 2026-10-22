@@ -2,7 +2,6 @@ from arbol_bst import ArbolBST
 from equipo import Equipo
 
 def crear_equipo(codigo):
-
     return Equipo(codigo, "Test", "Lab", "Operativo", "Admin")
 
 def ejecutar_experimento():
@@ -19,10 +18,34 @@ def ejecutar_experimento():
     for clave in claves_b:
         arbol_b.insertar(crear_equipo(clave))
 
-    # 3. COMPARACIÓN DE ALTURAS
-    print("--- 1. COMPARACIÓN DE ALTURAS ---")
-    print(f"Altura del Árbol A (Balanceado): {arbol_a.altura()}")
-    print(f"Altura del Árbol B (Degenerado): {arbol_b.altura()}\n")
+    print("\n--- ARBOL A: ORDEN ORIGINAL ---")
+    print(arbol_a.visualizar())
+    print(f"Altura: {arbol_a.altura()}")
+    print("\n--- ARBOL B: ORDEN ASCENDENTE ---")
+    print(arbol_b.visualizar())
+    print(f"Altura: {arbol_b.altura()}")
+
+    print("\n--- NODOS EXAMINADOS EN LAS BUSQUEDAS ---")
+    print(f"{'Busqueda':<16} {'Codigo':<10} {'Arbol A':<10} {'Arbol B':<10}")
+    print("-" * 49)
+
+    busquedas = [
+        ("Clave minima", min(claves_a)),
+        ("Clave maxima", max(claves_a)),
+        ("Raiz original", claves_a[0])
+    ]
+
+    for nombre, clave in busquedas:
+        arbol_a.buscar(clave)
+        examinados_a = arbol_a.nodos_examinados
+
+        arbol_b.buscar(clave)
+        examinados_b = arbol_b.nodos_examinados
+
+        print(
+            f"{nombre:<16} {clave:<10} "
+            f"{examinados_a:<10} {examinados_b:<10}"
+        )
 
 if __name__ == "__main__":
     ejecutar_experimento()
