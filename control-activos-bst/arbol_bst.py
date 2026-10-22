@@ -4,17 +4,12 @@ from bst_recorridos import RecorridosMixin
 from bst_estadisticas import EstadisticasMixin
 
 
-class ArbolBST(
-    BSTCore,
-    EliminacionMixin,
-    RecorridosMixin,
-    EstadisticasMixin
-):
+class ArbolBST(BSTCore,EliminacionMixin,RecorridosMixin,EstadisticasMixin):
 
     def __init__(self) -> None:
         super().__init__()
 
-    def obtener_raiz(self):  # sourcery skip: assign-if-exp, reintroduce-else
+    def obtener_raiz(self):  
         if self.raiz is None:
             return None
 
@@ -26,9 +21,4 @@ class ArbolBST(
 
         return self.visualizar()
 
-
-if __name__ == "__main__":
-    print("Módulo ArbolBST")
-    print("Este archivo integra las operaciones del BST.")
-    print("Ejecute main.py para utilizar el sistema.")
 

@@ -45,11 +45,7 @@ class BSTCore:
             self.nodos_examinados += 1
 
             if codigo == clave:
-                self._registrar(
-                    f"Comparar {codigo} con {clave}: iguales -> duplicado, "
-                    "se rechaza.",
-                    traza,
-                )
+                self._registrar(f"Comparar {codigo} con {clave}: iguales -> duplicado, ""se rechaza.",traza,)
                 return False
 
             if codigo < clave:
