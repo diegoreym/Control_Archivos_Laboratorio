@@ -434,12 +434,6 @@ class SistemaEquipo:
         print()
         print(self.arbol.visualizar())
 
-        print("\nLeyenda:")
-        print("[raiz] = Nodo principal")
-        print("[izq]  = Hijo izquierdo")
-        print("[der]  = Hijo derecho")
-
-
     # MODO DEMOSTRACIÓN
 
 
